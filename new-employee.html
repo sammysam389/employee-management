@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="newstyle.css">
+    <title>Create New Employee</title>
+</head>
+<body>
+    <nav class="menu-bar">
+        <ul class="menu-list">
+            <li><a href="index.html" class="menu-link">Home</a></li>
+            <li><a href="new-employee.html" class="menu-link">Add Employee</a></li>
+            <li><a href="employee-list.html" class="menu-link">Employee List</a></li>
+            <li><a href="#" class="menu-link">Salary Management</a></li>
+            <li><a href="#" class="menu-link">Leave Management</a></li>
+        </ul>
+     </nav>
+    <div class="background"></div>
+    <header class="header">
+        <h1>Create New Employee</h1>
+    </header>
+
+    <main>
+        <form id="newEmployeeForm" class="form-container">
+            <label for="photo">Photo:</label>
+            <input type="file" id="photo" accept="image/*" onchange="previewPhoto()">
+            <img id="photoPreview" style="display:none; width: 100px; height: 100px; object-fit: cover;" alt="Photo Preview">
+
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Enter full name" required>
+
+            <label for="id">ID/Passport No:</label>
+            <input type="text" id="id" placeholder="Enter ID or Passport number" required>
+
+            <label for="phone">Phone No:</label>
+            <input type="tel" id="phone" placeholder="Enter phone number" required>
+
+            <label for="role">Role:</label>
+            <input type="text" id="role" placeholder="Enter employee role" required>
+    
+            <button type="button" class="btn-submit" onclick="saveEmployee()">Submit</button>
+            
+        </form>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Management System. All rights reserved.</p>
+    </footer>
+
+    <script src="newscript.js"> </script>
+</body>
+</html>

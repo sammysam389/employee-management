@@ -1,0 +1,141 @@
+/* General Reset */
+body, h1, p, form, label, input, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;            /* Full width for horizontal scrolling */
+    height: 100%;           /* Full height for vertical scrolling */
+    overflow: auto;         /* Enable scrolling in both directions */
+    font-family: 'Arial', sans-serif;
+}
+
+/* Menu Bar */
+.menu-bar {
+    background-color: rgba(44, 62, 80, 0.9);
+    padding: 10px 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.menu-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.menu-link {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 5px;
+}
+
+.menu-link:hover {
+    background-color: #1abc9c;
+    color: #fff;
+}
+
+/* Background Styling */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200%;            /* Larger width to demonstrate horizontal scrolling */
+    height: 200%;           /* Larger height to demonstrate vertical scrolling */
+    background: url('images/wokers.jpg') no-repeat center center/cover;
+    filter: blur(8px);
+    z-index: -1;
+    opacity: 0.8;
+}
+
+/* Header */
+.header {
+    background: rgba(255, 255, 255, 0.9);
+    color: black;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.header-title {
+    font-size: 2.5rem;
+}
+
+/* Main Content */
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 150%;        /* Extend content for horizontal scrolling */
+    min-height: 150%;       /* Extend content for vertical scrolling */
+}
+
+.form-container {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-top: 15px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: text;
+}
+
+/* Submit Button */
+.btn-submit {
+    width: 50%;
+    padding: 12px 12px;
+    background: #205737;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-submit:hover {
+    background: #45A049;
+    transform: scale(1.05);
+}
+
+.btn-submit:active {
+    transform: scale(1);
+}
+
+/* Footer */
+.footer {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.9rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

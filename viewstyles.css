@@ -1,0 +1,215 @@
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    color: #333;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    position: relative; /* For backdrop alignment */
+}
+
+/* Background with Blurred Image */
+body::before {
+    content: "";
+    background: url('images/data.jpg') no-repeat center center fixed;
+    background-size: cover;
+    filter: blur(8px);
+    position: fixed; /* Fixed for consistent backdrop alignment */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    animation: backgroundAnimation 10s infinite alternate;
+}
+
+@keyframes backgroundAnimation {
+    0% {
+        filter: blur(8px);
+    }
+    50% {
+        filter: blur(4px);
+    }
+    100% {
+        filter: blur(8px);
+    }
+}
+
+/* Menu Bar */
+.menu-bar {
+    background-color: rgba(44, 62, 80, 0.9); /* Dark background for contrast */
+    padding: 12px 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100; /* Ensure visibility over the background */
+}
+
+.menu-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.menu-link {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 12px 25px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 8px;
+}
+
+.menu-link:hover {
+    background-color: #1abc9c;
+    color: #fff;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    padding: 30px;
+    background-color: #32393f;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+/* Main Content */
+main {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Details Container */
+.details-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    border: 2px solid #e0e0e0;
+    border-radius: 20px;
+    padding: 35px;
+    background: rgba(255, 255, 255, 0.85);
+    width: 90%; /* Adaptable width for smaller screens */
+    max-width: 700px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    animation: slideIn 1s ease-in-out;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+
+    /* Fallback for browsers that don't support backdrop-filter */
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Apply backdrop-filter only for supported browsers */
+@supports (backdrop-filter: blur(10px)) {
+    .details-container {
+        backdrop-filter: blur(10px); /* Apply blur only for supported browsers */
+    }
+}
+
+/* Hover effect */
+.details-container:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+    filter: brightness(1.05);
+}
+
+/* Keyframe Animation for Slide-In */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Employee Image */
+.employee-photo {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #ddd;
+    transition: transform 0.3s;
+}
+
+.employee-photo:hover {
+    transform: scale(1.1);
+}
+
+/* Employee Details */
+.details {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+    flex-grow: 1;
+}
+
+/* Individual Detail Items */
+.details p {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 500;
+    color: #555;
+}
+
+.details h2 {
+    margin: 0 0 12px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+/* Buttons */
+.btn-back {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 30px; /* Larger for better visibility */
+    font-size: 1.1rem; /* Larger font */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 25px;
+    transition: background 0.3s, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-back:hover {
+    background-color: #45a049;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.btn-back:focus {
+    outline: 3px solid #45a049;
+}
+
+/* Footer */
+.footer {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
